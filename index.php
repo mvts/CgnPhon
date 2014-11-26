@@ -1,9 +1,9 @@
 <?php
 /**
- * @param	string	$word The string to be analysed
- * @return	string	$cgn_val	Represents Kölner Phonetik value
+ * @param	string	$word	The string to be analysed
+ * @return	string	$cgn_val	Represents KÃ¶lner Phonetik value
  * @access	public
- * By Mats Bähr, 24.11.2014
+ * @author	Mats BÃ¤hr
  * www.matsbaehr.de
  */
 
@@ -22,7 +22,7 @@ class CgnPhon
     function getValue ($word) {
     
         $word = strtolower($word);
-		$word = str_replace(['ä', 'ö', 'ü', 'ß'], ['a', 'o', 'u', 'ss'], $word);
+		$word = str_replace(['Ã¤', 'Ã¶', 'Ã¼', 'ÃŸ'], ['a', 'o', 'u', 'ss'], $word);
         $cgn_val = '';
 		
         for ($i=0;$i<strlen($word);$i++) {
