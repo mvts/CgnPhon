@@ -1,4 +1,4 @@
-CgnPhone
+CgnPhon
 ========
 
 - Applies Kölner Phonetik Algorythm to PHP soundex function for use with German language.
