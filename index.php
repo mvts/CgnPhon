@@ -9,8 +9,8 @@
 
 class CgnPhon
 {
-    static $letter_coding 	= 	['a' => '', 'e' => '', 'i' => '', 'o' => '', 'u' => '', 'j' => '', 
-                            	'y' => '', 'b' => '1', 'f' => '3', 'v' => '3', 'w' => '3', 'g' => '4', 
+    static $letter_coding 	= 	['a' => '0', 'e' => '0', 'i' => '0', 'o' => '0', 'u' => '0', 'j' => '0', 
+                            	'y' => '0', 'b' => '1', 'f' => '3', 'v' => '3', 'w' => '3', 'g' => '4', 
                             	'k' => '4', 'q' => '4', 'l' => '5', 'm' => '6', 'n' => '6', 'r' => '7', 
                             	's' => '8', 'z' => '8', 't' => '2', 'p' => '1', 'x' => '48', 'd' => '2'];
     static $exc_not_before 	= 	['ph' => '3', 'dc' => '8', 'tc' => '8', 'ds' => '8', 'ts' => '8',
@@ -55,6 +55,10 @@ class CgnPhon
 		// Delete double values
 		for ($i=0;$i<strlen($cgn_val);$i++) {
 			if ($cgn_val[$i] == @$cgn_val[$i+1])
+				$cgn_val[$i] = '';
+			
+			// Delete all 0s except if leading
+			if ($i == 0 && $cgn_val[$i] == '0')
 				$cgn_val[$i] = '';
 		}
 		
