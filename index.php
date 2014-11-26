@@ -58,7 +58,7 @@ class CgnPhon
 				$cgn_val[$i] = '';
 			
 			// Delete all 0s except if leading
-			if ($i == 0 && $cgn_val[$i] == '0')
+			if ($i != 0 && $cgn_val[$i] == '0')
 				$cgn_val[$i] = '';
 		}
 		
